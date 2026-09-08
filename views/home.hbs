@@ -1,0 +1,58 @@
+<main class="page-shell">
+  <section class="intro-panel">
+    <p class="eyebrow">Encuentra una nueva compañía</p>
+    <h1>Una decisión pequeña.<br><em>Un amor enorme.</em></h1>
+    <p class="intro-copy">Cuéntanos un poco sobre ti y el tipo de compañero que quieres recibir en casa. Nuestro equipo revisará tu solicitud con cariño.</p>
+    <div class="promise-list" aria-label="Compromisos de adopción">
+      <div><span>01</span><p>Conocemos tus necesidades</p></div>
+      <div><span>02</span><p>Buscamos la mejor conexión</p></div>
+      <div><span>03</span><p>Te acompañamos en el proceso</p></div>
+    </div>
+  </section>
+
+  <section class="form-panel" aria-labelledby="form-title">
+    <div class="form-heading">
+      <p class="eyebrow">Primer paso</p>
+      <h2 id="form-title">Quiero adoptar</h2>
+      <p>Déjanos tus datos para comenzar.</p>
+    </div>
+    {{#if error}}
+      <div class="alert" role="alert">{{error}}</div>
+    {{/if}}
+    <form action="/adopciones" method="POST">
+      <label>Nombre completo
+        <input type="text" name="name" placeholder="Ej. Ana García" value="{{form.name}}" required>
+      </label>
+      <div class="field-row">
+        <label>Correo electrónico
+          <input type="email" name="email" placeholder="ana@correo.com" value="{{form.email}}" required>
+        </label>
+        <label>Teléfono
+          <input type="tel" name="phone" placeholder="300 000 0000" value="{{form.phone}}" required>
+        </label>
+      </div>
+      <div class="field-row">
+        <label>¿Qué compañero buscas?
+          <select name="petType" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </label>
+        <label>Experiencia previa
+          <select name="experience" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Primera vez">Primera vez</option>
+            <option value="Ya he adoptado">Ya he adoptado</option>
+          </select>
+        </label>
+      </div>
+      <label>Cuéntanos algo más <span class="optional">Opcional</span>
+        <textarea name="message" rows="3" placeholder="¿Cómo es tu hogar? ¿Qué esperas de esta adopción?">{{form.message}}</textarea>
+      </label>
+      <button type="submit">Enviar mi solicitud <span aria-hidden="true">→</span></button>
+      <p class="privacy-note">Tus datos se usarán únicamente para contactarte sobre esta adopción.</p>
+    </form>
+  </section>
+</main>
