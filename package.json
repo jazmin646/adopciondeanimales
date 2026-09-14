@@ -1,5 +1,6 @@
 {
   "name": "patitas-en-casa",
+  "type": "module",
   "version": "1.0.0",
   "description": "Formulario de adopcion de mascotas con Express, Handlebars y MongoDB",
   "main": "server.js",
