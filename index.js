@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = 'mongodb+srv://jazminstuardo629_db_user:YqWZfl5Nr0zAWxTm@cluster0.e5cgtsx.mongodb.net/hola?retryWrites=true&w=majority';
 
 const { Schema, model } = mongoose;
 
